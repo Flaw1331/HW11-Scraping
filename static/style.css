@@ -1,0 +1,39 @@
+body {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    line-height: 100%;
+    color: #333;
+    background: #e6e6e6;
+  }
+
+.button {
+    background-color:  #dd713f; 
+    color: black;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgb(4, 0, 255);
+    color: white;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+
+}
+
+.weather-box {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+table, td {
+    border: 2px solid black;
+}
+
+th {
+    background-color: white;
+    padding: 5px;  
+}
