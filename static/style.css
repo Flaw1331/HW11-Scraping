@@ -44,12 +44,6 @@ tr {
     background-color: white;
 }
 
-h2.mars-hemispheres-title {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .hemisphere.img {
     border-style: solid;
     border-width: 2px;
