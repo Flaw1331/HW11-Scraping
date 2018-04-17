@@ -1,63 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Off To Mars</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-  <link rel="stylesheet" href="static/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Off To Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+  </head>
 
-<body>
-  <div class="container">
+  <body>
+    <div class="container">
 
-    <div class="jumbotron text-center">
-      <h1>Off To Mars!</h1>
-      <p>
-        <a class="button btn btn-lg" href="/scrape" role="button">Whats New!?</a>
-      </p>
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12 col-xs-12">
-          <h2>Latest Mars News</h2>
-          <h4> {{ mars.news_title }}</h4>
-          <p> {{mars.summary}} </p>
+      <div class="jumbotron text-center">
+        <h1>Off To Mars!</h1>
+        <p><a class="button btn btn-lg" href="/scrape" role="button">Whats New!?</a></p>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 col-xs-12">
+            <h2>Latest Mars News</h2>
+            <h4> {{ mars.news_title }}</h4>
+            <p> {{mars.news_summary}} </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="container-fluid">
-      <div class="row">
+      <div class="container-fluid">
+        <div class="row">
           <div class="col-md-8 col-xs-12 big_box">
-        <h2>Featured Imaged From Mars</h2>
-        <img class="img" src="{{mars.featured_image_url}}" alt="Mars featured image"/>
-      </div></br>
-     <hr>
-      <div class="col-md-4 col-xs-12">
-      <div class="row weather-box" >
-          <div class="col-md-12">
-        <h3>Weather On Mars</h3>
-        <p>
-          {{mars.mars_weather}}
-        </p>
-      </div>
-      </div>
+            <h2>Featured Imaged From Mars</h2>
+          <img class="img" src="{{mars.featured_image_url}}" alt="Mars featured image"/>
+          </div></br>
+
       <hr>
-      <div class="col-md-12 col-xs-12">
-      <div>
-        <h3>Mars Facts</h3>
-        <p>
-          {{mars.table_string | safe}}
-        </p>
+        <div class="col-md-4 col-xs-12">
+          <div class="row weather-box" >
+            <div class="col-md-12">
+              <h3>Weather On Mars</h3>
+              <p>{{mars.mars_weather}}</p>
+            </div>
+          </div>
+        
+      <hr>
+        <div class="col-md-12 col-xs-12">
+          <div class="mars-facts">
+            <h3>Mars Facts</h3>
+            <p>{{mars.table_string | safe}}</p>
+          </div>
+        </div>
+        </div>
+
+      <div class="container-fluid">
+        <div class="mars-hemispheres">
+          <div class="col-md-12 col-xs-12">
+            <h2 class="mars-hemispheres-title">Mars Hemispheres</h2>
+              <div class="mars-hemispheres-imgs">
+
+                <hr>
+                <div class="row">
+                  <div class="col-md-4 col-xs-12">
+                    <div class="hemisphere">
+                      <img class="img" src="{{mars.hemisphere_image_urls[0]['Cerberus Hemisphere Enhanced']}}" alt="Cerberus Hemisphere"/>
+                      <h6>Cerberus Hemisphere</h6>
+                    </div>
+                  </div>
+                
+                  <div class="col-md-4 col-xs-12">
+                    <div class="hemisphere">
+                      <img class="img" src="{{mars.hemisphere_image_urls[1]['Schiaparelli Hemisphere Enhanced']}}" alt="Schiaparelli Hemisphere"/>
+                      <h6>Schiaparelli Hemisphere</h6>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4 col-xs-12">
+                    <div class="hemisphere">
+                      <img class="img" src="{{mars.hemisphere_image_urls[2]['Syrtis Major Hemisphere Enhanced']}}" alt="Syrtis Major Hemisphere"/>
+                      <h6>Cerberus Hemisphere</h6>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-xs-12">
+                    <div class="hemisphere">
+                      <img class="img" src="{{mars.hemisphere_image_urls[3]['Valles Marineris Hemisphere Enhanced']}}" alt="Valles Marineris Hemisphere"/>
+                      <h6>Schiaparelli Hemisphere</h6>
+                    </div>
+                  </div>
+                </div>
+
+
+
+              </div> 
+          </div>
+        </div>
+
+
       </div>
-      </div>
-    </div>
+
+
     </div>
   </body>
 
-  </html>
+</html>
